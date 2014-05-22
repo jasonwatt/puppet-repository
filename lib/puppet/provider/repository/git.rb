@@ -14,9 +14,9 @@ Puppet::Type.type(:repository).provide :git do
   end
 
   def self.validate(v)
-    unless %w(git ssh https).member? v.to_s
+    unless %w(git ssh https bitbucket).member? v.to_s
       raise Puppet::Error, \
-        "Protocol can only be git, https, or ssh for now!"
+        "Protocol can only be git, https, ssh, or bitbucket for now!"
     end
   end
 
