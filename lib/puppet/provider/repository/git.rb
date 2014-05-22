@@ -82,6 +82,8 @@ Puppet::Type.type(:repository).provide :git do
         "#{@resource[:protocol]}://github.com/#{source}"
       when "ssh"
         "git@github.com:#{source}.git"
+      when "bitbucket"
+        "git@bitbucket.org:#{source}.git"
       else
         raise "failtown"
       end
